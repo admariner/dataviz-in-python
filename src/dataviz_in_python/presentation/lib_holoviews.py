@@ -34,11 +34,7 @@ def get_plot(theme="default", accent_base_color="blue"):
         # https://github.com/holoviz/holoviews/issues/5058
         # active_tools=["point_draw"]
     )
-    if theme == "default":
-        point_color = "black"
-    else:
-        point_color = "#E5E5E5"
-
+    point_color = "black" if theme == "default" else "#E5E5E5"
     streams.CurveEdit(data=curve.columns(), source=curve, style={"color": point_color, "size": 10})
 
     table = hv.Table(curve).opts(editable=True)

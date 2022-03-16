@@ -50,8 +50,7 @@ def get_menu(url, title):
 
 def get_theme():
     template = pn.state.template
-    theme = "dark" if template.theme == pn.template.DarkTheme else "default"
-    return theme
+    return "dark" if template.theme == pn.template.DarkTheme else "default"
 
 
 def configure(
@@ -65,7 +64,7 @@ def configure(
 ):
     """Runs pn.extension and pn.state.template.param.update with the specified
     arguments"""
-    if not CSS in pn.config.raw_css:
+    if CSS not in pn.config.raw_css:
         pn.config.raw_css.append(CSS)
 
     pn.extension(*args, sizing_mode=sizing_mode, template=template)

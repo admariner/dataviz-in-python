@@ -36,11 +36,7 @@ def get_plot(theme="default", accent_base_color="blue"):
         columns=["Day", "Orders"],
     )
 
-    if theme == "dark":
-        plotly_template = "plotly_dark"
-    else:
-        plotly_template = "plotly"
-
+    plotly_template = "plotly_dark" if theme == "dark" else "plotly"
     fig = px.line(
         data,
         x="Day",

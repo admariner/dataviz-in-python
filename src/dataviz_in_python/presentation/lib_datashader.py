@@ -22,7 +22,7 @@ framework on Datashader, HoloViews and Panel. For more inspiration see [Google S
 """
 pn.panel(TEXT, css_classes=[config.TEXT_CLASS]).servable()
 
-if not "air" in pn.state.cache:
+if "air" not in pn.state.cache:
     air = pn.state.cache["air"] = xr.tutorial.open_dataset("air_temperature").load().air
 else:
     air = pn.state.cache["air"]
